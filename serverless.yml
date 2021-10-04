@@ -59,3 +59,10 @@ functions:
           path: notes/{id}
           cors: true
           method: put
+  delete: 
+    handler: delete.main
+    events: 
+      - http: 
+          path: notes/{id}
+          cors: true
+          method: delete
