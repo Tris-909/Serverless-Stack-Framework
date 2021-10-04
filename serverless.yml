@@ -45,3 +45,10 @@ functions:
           path: notes/{id}
           cors: true
           method: get
+  list:
+    handler: list.main
+    events: 
+      - http: 
+          path: notes
+          cors: true
+          method: get
