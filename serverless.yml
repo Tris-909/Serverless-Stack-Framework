@@ -38,3 +38,10 @@ functions:
           path: notes
           cors: true
           method: post
+  get:
+    handler: get.main
+    events: 
+      - http:
+          path: notes/{id}
+          cors: true
+          method: get
