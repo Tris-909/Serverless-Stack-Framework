@@ -1,7 +1,7 @@
-import hander from './libs/handler-libs';
+import handler from './libs/handler-libs';
 import dynamoDB from './libs/dynamo-lib';
 
-export const main = handler((event, context) => {
+export const main = handler(async (event, context) => {
     const params = {
         TableName: process.env.tableName,
         KeyConditionExpression: "userId = :userId",

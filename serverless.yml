@@ -52,3 +52,10 @@ functions:
           path: notes
           cors: true
           method: get
+  update: 
+    handler: update.main
+    events: 
+      - http: 
+          path: notes/{id}
+          cors: true
+          method: put
