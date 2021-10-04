@@ -1,13 +1,9 @@
 import * as uuid from 'uuid';
-import AWS from 'aws-sdk';
+import handler from './libs/handler-libs';
+import dynamoDB from './libs/dynamo-lib';
 
-AWS.config.update({ region: "ap-southeast-2" });
-
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
-
-export async function main(event, context) {
+export const main = handler(async (event, context) => {
     const data = JSON.parse(event.body);
-
     const params = {
         TableName: process.env.tableName,
         Item: {
@@ -19,24 +15,7 @@ export async function main(event, context) {
         }
     }
 
-    const headers = {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": true
-    }
+    await dynamoDB.put(params)
 
-    try {
-        await dynamoDB.put(params).promise();
-
-        return {
-            statusCode: 200,
-            headers: headers,
-            body: JSON.stringify(params.Item)
-        }
-    } catch(err) {
-        return {
-            statusCode: 500,
-            headers: headers,
-            body: JSON.stringify({ error: err.message })
-        }
-    }
-}
+    return params.Item;
+});
