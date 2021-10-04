@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Serverless Node.js Starter [![Seed Status](https://api.seed.run/serverless-stack/serverless-nodejs-starter/stages/prod/build_badge)](https://console.seed.run/serverless-stack/serverless-nodejs-starter)
 
 A Serverless starter that adds ES6, TypeScript, serverless-offline, linting, environment variables, and unit test support. Part of the [Serverless Stack](http://serverless-stack.com) guide.
@@ -143,3 +144,7 @@ To [override the default config](https://eslint.org/docs/user-guide/configuring)
 ---
 
 This repo is maintained by [Serverless Stack](https://serverless-stack.com).
+=======
+# Serverless-Stack-Framework
+Doing a tutorial about Serverless-Stack framework
+>>>>>>> 3fcda9639191ae55d9c9b03ffd87190c3a44f1a5
